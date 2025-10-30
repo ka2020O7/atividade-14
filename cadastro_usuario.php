@@ -1,0 +1,41 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.php">Início</a>
+        <a href="cadastro_usuario.php">Cadastrar Usuário</a>
+        <a href="cadastro_tarefa.php">Cadastrar Tarefa</a>
+        <a href="gerenciar_tarefas.php">Gerenciar Tarefas</a>
+    </nav>
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo '<div class="message ' . $_SESSION['message_type'] . '">' . $_SESSION['message'] . '</div>';
+            unset($_SESSION['message']);
+            unset($_SESSION['message_type']);
+        }
+        ?>
+        <form action="processar_usuario.php" method="POST">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
