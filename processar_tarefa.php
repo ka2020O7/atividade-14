@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
-        // Insert new task
         $stmt = $conn->prepare("INSERT INTO tasks (user_id, description, sector, priority) VALUES (?, ?, ?, ?)");
         $stmt->execute([$user_id, $description, $sector, $priority]);
 
