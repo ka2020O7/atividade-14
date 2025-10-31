@@ -21,7 +21,7 @@
     </nav>
     <div class="container">
         <h1>Bem-vindo ao Sistema de Gerenciamento de Tarefas</h1>
-        <p class="welcome-text">Selecione uma opção no menu acima para começar a gerenciar suas tarefas de forma eficiente.</p>
+      
     </div>
 </body>
 </html>
